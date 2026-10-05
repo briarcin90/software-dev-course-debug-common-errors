@@ -27,6 +27,10 @@ Think about which debugging methods you found most useful and how you might appl
 console.log("Welcome to the bootcamp
 
 // What’s Wrong?
+            
+// Program A
+// Error type: Syntax error
+console.log("Welcome to the bootcamp");
 
 
 // Program B
@@ -41,6 +45,13 @@ for (let i = 0; i < numbers.length; i++) {
 
 // What’s Wrong?
 
+// Program B
+// Error type: Runtime error
+let numbers = [2, 4, 8];
+for (let i = 0; i < numbers.length; i++) {
+  let doubled = numbers[i] * 2;
+  console.log(doubled);
+}
 
 
 // Program C (Logic Error)
@@ -60,3 +71,19 @@ function isPrime(num) {
 console.log(isPrime(7)); // Expected true but gets false
 
 // What’s Wrong?
+
+// Program C
+// Error type: Logic error
+function isPrime(num) {
+  if (num < 2) return false;
+
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      return false; // num is NOT prime
+    }
+  }
+
+  return true; // num IS prime
+}
+
+console.log(isPrime(7)); // Expected: true
